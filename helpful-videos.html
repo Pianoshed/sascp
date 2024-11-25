@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helpful HIV Awareness Videos - Ondo State AIDS and STI Control Program</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f7f7f7;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2em auto;
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        header h1 {
+            font-size: 2em;
+            color: #b81d24;
+            margin-bottom: 0.5em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin-top: 2em;
+        }
+
+        .video-section h2 {
+            font-size: 1.8em;
+            color: #b81d24;
+            margin-bottom: 1em;
+        }
+
+        .video-item {
+            margin-bottom: 2em;
+            text-align: center;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .video-item h3 {
+            margin-top: 1em;
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        .video-item p {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 0.5em;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 2em;
+            padding: 1.5em;
+            background-color: #f1f1f1;
+            border-left: 5px solid #b81d24;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+/* Home Button */
+        .home-btn {
+            display: inline-block;
+            padding: 0.1em 0.7em;
+            font-size: 1em;
+            color: red;
+            background-color: white; /* Red color */
+            text-decoration: none;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            text-transform: uppercase;
+        }
+
+        .home-btn:hover {
+            background-color: #fff;
+            color: red;
+
+            transform: translateY(-3px);
+        }
+
+        .home-btn:active {
+            transform: translateY(1px);
+        }
+
+        .home-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+        }
+              .logo-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .logo {
+          height: 60px;
+          width: auto;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+          border-radius: 8px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+          transform: scale(1.1);
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+          .logo-container {
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .logo {
+            height: 50px;
+          }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+             <div class="logo-container">
+            <img src="{{ url_for('static', filename='log1.png') }}" alt="Logo 1" class="logo">
+            <img src="{{ url_for('static', filename='odmoh.png') }}" alt="Logo 2" class="logo">
+        </div>
+            <h1>Helpful HIV Awareness Videos and Tutorials</h1>
+            <a href="/" class="home-btn">Home</a>
+            <p>Watch trusted educational videos on HIV prevention, treatment, and awareness from reputable organizations.</p>
+        </header>
+
+        <section class="video-section">
+            <h2>Featured Educational Videos</h2>
+
+            <!-- Video 1 -->
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/9njEkMfEI0Y" title="HIV Awareness Video 1" allowfullscreen></iframe>
+                <h3>Understanding HIV and AIDS</h3>
+                <p>This video provides an overview of HIV, its transmission, prevention, and the importance of awareness and education.</p>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/wp8oeF_TQbE" title="HIV Awareness Video 2" allowfullscreen></iframe>
+                <h3>How to Prevent HIV</h3>
+                <p>This tutorial explains practical methods to prevent HIV, including the use of condoms, PrEP, and regular testing.</p>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/VZ-OT7nSNCM" title="HIV Awareness Video 3" allowfullscreen></iframe>
+                <h3>Living with HIV: Myths and Facts</h3>
+                <p>Learn about the misconceptions and truths surrounding living with HIV, and understand how to manage it effectively.</p>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/ssrKekB4QXs" title="HIV Awareness Video 4" allowfullscreen></iframe>
+                <h3>The Importance of HIV Testing</h3>
+                <p>This video emphasizes why HIV testing is crucial for early detection and better health outcomes.</p>
+            </div>
+
+            <!-- Video 5 -->
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/vzKKVQwmvMM" title="HIV Awareness Video 5" allowfullscreen></iframe>
+                <h3>PEP and PrEP: HIV Prevention</h3>
+                <p>Learn about the preventive treatments of PEP (Post-Exposure Prophylaxis) and PrEP (Pre-Exposure Prophylaxis) and how they help in reducing HIV risk.</p>
+            </div>
+        </section>
+
+        <section class="contact">
+            <p>For more information or if you need support, please contact us directly.</p>
+            <button onclick="window.location.href='/testing-counseling'">Contact Us for Assistance</button>
+             <p>&copy; Ondo State AIDS, Viral Hepatitis and STI Control Program. All rights reserved.</p>
+        </section>
+    </div>
+
+</body>
+</html>

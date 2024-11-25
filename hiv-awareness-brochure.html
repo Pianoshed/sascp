@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIV Awareness Brochure - Ondo State AIDS and STI Control Program</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('{{ url_for("static", filename="hiv9.png") }}');
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 2em auto;
+            background: white;
+            padding: 2em;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        header h1 {
+            font-size: 2em;
+            color: #b81d24;
+            margin-bottom: 0.5em;
+        }
+
+        header p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Resource Links Section */
+        .resources {
+            margin-top: 1.5em;
+        }
+
+        .resources h2 {
+            font-size: 1.8em;
+            color: #b81d24;
+            margin-bottom: 0.5em;
+        }
+
+        .resource-link {
+            display: block;
+            text-decoration: none;
+            background-color: #b81d24;
+            color: #fff;
+            padding: 1em;
+            border-radius: 5px;
+            margin: 1em 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background-color: #a31820;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 2em;
+            padding: 1.5em;
+            background-color: #f1f1f1;
+            border-left: 5px solid #b81d24;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Home Button */
+        .home-btn {
+            display: inline-block;
+            padding: 0.1em 0.7em;
+            font-size: 1em;
+            color: red;
+            background-color: white; /* Red color */
+            text-decoration: none;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            text-transform: uppercase;
+        }
+
+        .home-btn:hover {
+            background-color: #fff;
+            color: red;
+
+            transform: translateY(-3px);
+        }
+
+        .home-btn:active {
+            transform: translateY(1px);
+        }
+
+        .home-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+        }
+              .logo-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+        }
+
+        .logo {
+          height: 60px;
+          width: auto;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+          border-radius: 8px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo:hover {
+          transform: scale(1.1);
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 600px) {
+          .logo-container {
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .logo {
+            height: 50px;
+          }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+             <div class="logo-container">
+            <img src="{{ url_for('static', filename='log1.png') }}" alt="Logo 1" class="logo">
+            <img src="{{ url_for('static', filename='odmoh.png') }}" alt="Logo 2" class="logo">
+        </div>
+            <h1>HIV Awareness Brochure</h1>
+            <a href="/" class="home-btn">Home</a>
+            <p>Access reliable information and resources on HIV/AIDS from the World Health Organization to help raise awareness and support prevention.</p>
+        </header>
+
+        <section class="resources">
+            <h2>WHO Resources on HIV/AIDS</h2>
+            <a href="https://www.who.int/health-topics/hiv-aids" target="_blank" class="resource-link">WHO HIV/AIDS Health Topic</a>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/hiv-aids" target="_blank" class="resource-link">WHO HIV/AIDS Fact Sheets</a>
+            <a href="https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/hiv" target="_blank" class="resource-link">WHO Global HIV, Hepatitis, and STIs Programmes</a>
+            <a href="https://www.unaids.org/en/regionscountries/countries/nigeria" target="_blank" class="resource-link">UNAIDS Nigeria HIV and AIDS Estimates</a>
+            <a href="https://www.unaids.org/en/resources/publications/brochures" target="_blank" class="resource-link">UNAIDS Brochures</a>
+        </section>
+
+        <section class="contact">
+            <p>For more information or support accessing these resources, please contact us.</p>
+        </section>
+         <p>&copy; Ondo State AIDS, Viral Hepatitis and STI Control Program. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

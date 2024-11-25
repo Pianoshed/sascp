@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treatment & Support - Ondo State AIDS and STI Control Program</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-image: url('{{ url_for("static", filename="tre2.jpeg") }}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 20px;
+        }
+
+        /* Animation Styles */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2em;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #0078d7, #00a4cc);
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .logo img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background-color: #fff;
+            color: #0078d7;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: #0078d7;
+            color: #fff;
+        }
+
+        /* Services Section */
+        .services {
+            margin: 30px 0;
+        }
+
+        .services h2 {
+            font-size: 1.8rem;
+            color: #b81d24;
+            margin-bottom: 15px;
+        }
+
+        .services ul {
+            list-style: disc inside;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+
+        .services ul li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #b81d24;
+            border-radius: 5px;
+        }
+
+        .contact h3 {
+            color: #b81d24;
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Button */
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #b81d24;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a31820;
+        }
+
+        /* Confirmation Message */
+        .confirmation {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f5e7;
+            color: #2c662d;
+            border-left: 5px solid #2c662d;
+            border-radius: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            .home-btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.8rem;
+            }
+
+            .home-btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <header>
+            <div class="logo-container">
+                <a href="{{ url_for('index') }}" class="logo">
+                    <img src="{{ url_for('static', filename='log1.png') }}" alt="Logo 1">
+                    <img src="{{ url_for('static', filename='odmoh.png') }}" alt="Logo 2">
+                </a>
+            </div>
+            <h1>Treatment & Support</h1>
+            <p>Comprehensive HIV treatment and support services for individuals living with HIV/AIDS in Ondo State.</p>
+            <a href="/" class="home-btn">Home</a>
+        </header>
+
+        <section class="services fade-in">
+            <h2>Our Treatment Services</h2>
+            <ul>
+                <li><strong>Antiretroviral Therapy (ART):</strong> Ongoing treatment and support for ART to help manage HIV and improve quality of life.</li>
+                <li><strong>Regular Health Checkups:</strong> Routine health assessments to monitor the patient’s progress and adjust treatments as needed.</li>
+                <li><strong>Medication Adherence Support:</strong> Resources and guidance to help individuals adhere to their treatment regimen.</li>
+            </ul>
+
+            <h2>Our Support Services</h2>
+            <ul>
+                <li><strong>Counseling Services:</strong> Professional counseling for those living with HIV/AIDS and their families.</li>
+                <li><strong>Peer Support Groups:</strong> Access to groups and networks of individuals with shared experiences to build a sense of community and support.</li>
+                <li><strong>Mental Health Resources:</strong> Mental health support to help address the emotional and psychological challenges of living with HIV/AIDS.</li>
+            </ul>
+        </section>
+
+        <section class="contact fade-in">
+            <h3>Need Additional Support?</h3>
+            <p>Our team is here to help. Request more information or schedule a consultation with our treatment and support specialists.</p>
+            <button onclick="showConfirmation()">Request Support</button>
+        </section>
+
+        <div id="confirmationMessage" class="confirmation">
+            <p>Thank you for reaching out. Our treatment and support team will contact you soon to provide further assistance.</p>
+        </div>
+    </div>
+
+    <script>
+        // Display confirmation message
+        function showConfirmation() {
+            document.getElementById("confirmationMessage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
