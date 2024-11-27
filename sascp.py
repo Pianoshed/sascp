@@ -259,7 +259,7 @@ def delete_submission(id):
         return jsonify({"success": False, "message": str(e)})
 
 
-EXCEL_FILE = "sascp/facility_geolocations.xlsx"
+ EXCEL_FILE = "facility_geolocations.xlsx"
 @app.route('/api/facilities', methods=['GET'])
 def get_facilities():
     try:
@@ -286,7 +286,7 @@ def get_facilities():
         # Convert the dataframe to a list of dictionaries
         facilities = data.to_dict(orient='records')
 
-        # Prepare the response
+/        # Prepare the response
         response = jsonify({"status": "success", "facilities": facilities})
         response.headers['Content-Type'] = 'application/json'  # Ensure the content-type is correct
         return response
