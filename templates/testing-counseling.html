@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing & Counseling - Ondo State AIDS and STI Control Program</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-image: url('{{ url_for("static", filename="testing.jpg") }}');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(0, 102, 161, 0.9);
+            color: #fff;
+            border-radius: 8px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #fff;
+            color: #0066A1;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: #0066A1;
+            color: #fff;
+        }
+
+        /* Logo Section */
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .logo-container img {
+            height: 50px;
+            margin: 0 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: slideInUp 1s ease-out;
+        }
+
+        /* Form Styles */
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Submit Button */
+        button {
+            display: block;
+            width: 30%;
+            padding: 10px;
+            margin: 20px auto;
+            background-color: #0066A1;
+            color: #fff;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004c75;
+        }
+
+        /* Testing Services Section */
+        .services-list {
+            margin: 30px 0;
+        }
+
+        .services-list h2 {
+            font-size: 1.8rem;
+            color: #0066A1;
+            margin-bottom: 10px;
+        }
+
+        .services-list ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .services-list ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Confirmation Message */
+        .confirmation {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e7f5e7;
+            color: #2c662d;
+            border-left: 5px solid #2c662d;
+            border-radius: 5px;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo Section -->
+    <div class="logo-container">
+        <a href="{{ url_for('index') }}" class="logo">
+            <img src="{{ url_for('static', filename='log1.png') }}" alt="Logo 1">
+            <img src="{{ url_for('static', filename='odmoh.png') }}" alt="Logo 2">
+        </a>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Testing & Counseling Registration</h1>
+            <p>Please provide your information below to schedule a session for HIV and STI testing and counseling. Our officer will contact you shortly.</p>
+            <a href="/" class="home-btn">Home</a>
+        </header>
+
+        <!-- Form -->
+        <form method="POST" action="/submit">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Date of Birth</label>
+                <input type="date" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+               <div class="form-group">
+                <label for="service">Select Testing Service</label>
+                <select id="service" name="service" required>
+                    <option value="hiv-testing">HIV Testing</option>
+                    <option value="pmtct-services">PMTCT services</option>
+                    <option value="viral-hepatitis">Viral Hepatitis Testing</option>
+                    <option value="sti-testing">STI Testing</option>
+                    <option value="counseling">Counseling Only</option>
+                    <option value="condoms">Condoms Distribution</option>
+                    <option value="GHR">Make a Gender Equality or Human Right Abuse report</option>
+                    <option value="full-package">Full Package (HIV/STI Testing/Viral Hepatitis & Counseling)</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Testing Services List -->
+        <section class="services-list">
+            <h2>Available Testing Services</h2>
+            <ul>
+                <li>HIV Testing: Quick, reliable, and confidential HIV testing services.</li>
+                <li>STI Testing: Screening for various sexually transmitted infections.</li>
+                <li>PMTCT Testing and counselling</li>
+                <li>Viral Hepatitis testing</li>
+                <li>Counseling Services: Professional guidance on prevention, treatment, and support for HIV and STIs.</li>
+                <li>Get PrEP/ PEP drugs</li>
+                <li>Condoms Distribution</li>
+                <li>Report violation of rights related to HIV/AIDS or HIV status-based discrimination and stigmatization</li>
+                <li>Full Package: Comprehensive service including HIV, Viral Hepatitis and STI testing with counseling.</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
+
+

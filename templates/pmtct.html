@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PMTCT - Preventing Mother-to-Child HIV Transmission</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image:  url('{{ url_for("static", filename="pmtct1.jpeg") }}'); /* Light purple background */
+             background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+            color: #4e2a84; /* Purple text */
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #5d1d8e; /* Dark Purple */
+            color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        nav .logo-container img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        nav .menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav .menu li {
+            display: inline;
+        }
+
+        nav .menu a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav .menu a:hover {
+            color: #ff99cc; /* Light pink for hover effect */
+        }
+
+        /* Hamburger Menu Styles */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #7c3f98; /* Lighter Purple */
+            color: white;
+            text-align: center;
+            padding: 60px 20px 40px;
+            margin-top: 80px; /* Space for fixed nav */
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .main-content h2,
+        .main-content h3 {
+            color: #7c3f98; /* Light Purple */
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .main-content p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .main-content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 0.95rem;
+        }
+
+        .call-to-action {
+            background-color: #7c3f98; /* Light Purple */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .call-to-action h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: #ff99cc; /* Pinkish color */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff66b3; /* Darker pink on hover */
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #5d1d8e; /* Dark Purple */
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff99cc; /* Light pink */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* For mobile screens */
+        @media screen and (max-width: 768px) {
+            nav .menu {
+                display: none;  /* Hide the menu by default */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjust this based on your header height */
+                left: 0;
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #5d1d8e; /* Dark Purple */
+                z-index: 10;
+            }
+
+            nav .menu li {
+                text-align: left;
+                margin: 5px 0;
+            }
+
+            nav .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 30px;
+                color: #fff;
+                cursor: pointer;
+                z-index: 11;
+            }
+
+            /* Show the menu when the toggle is active */
+            nav .menu-toggle.active + .menu {
+                display: flex;
+            }
+
+            nav .logo-container {
+                position: relative;
+                z-index: 12;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.85rem;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='log1.png') }}" alt="Logo 1" class="logo">
+            <img src="{{ url_for('static', filename='odmoh.png') }}" alt="Logo 2" class="logo">
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span>&#9776;</span> <!-- Hamburger icon -->
+        </div>
+        <ul class="menu">
+            <li><a href="/" class="home-btn">Home</a></li>
+            <li><a href="#pmtct-info" class="nav-link">What is PMTCT?</a></li>
+            <li><a href="#services" class="nav-link">PMTCT Services</a></li>
+            <li><a href="#care" class="nav-link">Care for Pregnant Women</a></li>
+            <li><a href="#get-help" class="nav-link">Request Assistance</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header id="home">
+        <h1>PMTCT - Preventing Mother-to-Child HIV Transmission</h1>
+        <p>We provide care and support for pregnant women to prevent the transmission of HIV to their babies.</p>
+    </header>
+
+    <!-- What is PMTCT Section -->
+    <section id="pmtct-info" class="main-content">
+        <h2>What is PMTCT?</h2>
+        <p>PMTCT stands for Prevention of Mother-to-Child Transmission. It involves a set of medical services and interventions aimed at preventing the transmission of HIV from an HIV-positive mother to her child during pregnancy, labor, delivery, and breastfeeding. With proper care, HIV transmission can be minimized or even eliminated.</p>
+    </section>
+
+    <!-- PMTCT Services Section -->
+    <section id="services" class="main-content">
+        <h3>PMTCT Services</h3>
+        <p>Our PMTCT services include:</p>
+        <ul>
+            <li>HIV testing and counseling for pregnant women</li>
+            <li>Antiretroviral therapy (ART) for HIV-positive pregnant women</li>
+            <li>Routine antenatal care with regular checkups</li>
+            <li>Monitoring of HIV transmission risk during pregnancy</li>
+            <li>Safe delivery practices to minimize the risk of transmission</li>
+            <li>Postpartum care, including breastfeeding guidance</li>
+        </ul>
+    </section>
+
+    <!-- Care for Pregnant Women Section -->
+    <section id="care" class="main-content">
+        <h3>Care for Pregnant Women</h3>
+        <p>We provide comprehensive care for pregnant women, including:</p>
+        <ul>
+            <li>Regular prenatal checkups to monitor both mother and baby’s health</li>
+            <li>Education on HIV prevention during pregnancy and labor</li>
+            <li>Safe delivery practices, including cesarean sections when needed</li>
+            <li>Breastfeeding guidance and support, especially for HIV-positive mothers</li>
+        </ul>
+    </section>
+
+    <!-- Request Assistance Section -->
+    <section id="get-help" class="call-to-action">
+        <h4>Need Assistance?</h4>
+        <p>If you are pregnant and living with HIV, or if you are at risk, we offer confidential care and support. Reach out to us today to learn more about our services and how we can help you.</p>
+        <a href="testing-counseling" class="cta-button">Request Assistance</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 PMTCT Care | All Rights Reserved</p>
+        <p>For more information, visit our <a href="#">website</a>.</p>
+         <p>&copy; Ondo State AIDS, Viral Hepatitis and STI Control Program. All rights reserved.</p>
+    </footer>
+
+ <!-- JavaScript for Menu Toggle -->
+    <script>
+       // Select the elements
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+
+// Add event listener to the toggle button
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active'); // Add or remove 'active' class on the button
+});
+    </script>
+</body>
+
+</html>

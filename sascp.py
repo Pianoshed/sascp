@@ -11,7 +11,7 @@ import string
 
 
 app = Flask(__name__, static_folder='static')
-
+CORS(app)  # Enable CORS for all routes
 # Placeholder for tracking homepage visits
 homepage_visits = []
 
@@ -259,7 +259,7 @@ def delete_submission(id):
         return jsonify({"success": False, "message": str(e)})
 
 
-EXCEL_FILE = r"C:\Users\OWMER\SASCP site\facility_geolocations.xlsx"
+EXCEL_FILE = r"C:\Users\OWMER\sascp-web\facility_geolocations.xlsx"
 
 @app.route('/api/facilities', methods=['GET'])
 def get_facilities():

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STI Prevention Guide | Ondo State AIDS and STI Control Program</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+/* Home Button */
+        .home-btn {
+            display: inline-block;
+            padding: 0.1em 0.7em;
+            font-size: 1em;
+            color: #fff;
+            background-color: #b81d24; /* Red color */
+            text-decoration: none;
+            text-align: center;
+            border-radius: 2px;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            margin-top: 1em;
+            text-transform: uppercase;
+        }
+
+        .home-btn:hover {
+            background-color: #fff;
+            color: red;
+
+            transform: translateY(-3px);
+        }
+
+        .home-btn:active {
+            transform: translateY(1px);
+        }
+
+        .home-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.5);
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: #b81d24;
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #f7f7f7;
+            padding: 1em 0;
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #b81d24;
+        }
+     /* Collage Container */
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            justify-items: center; /* Centers the images in each grid item */
+        }
+
+        /* Individual Collage Items */
+        .collage-item {
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0; /* Start as invisible */
+            transform: scale(0.9); /* Start with a slight scale for animation */
+            animation: fadeIn 1.5s ease-out forwards; /* Animation to fade in */
+        }
+
+        /* Keyframe for Fade In Effect */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Animation Delay for Each Image */
+        .collage-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .collage-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+         .collage-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+         .collage-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        /* Main Content */
+        main {
+            padding: 2em 0;
+            background-color: white;
+        }
+
+        main h2 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            color: #b81d24;
+        }
+
+        .section {
+            margin-bottom: 2em;
+        }
+
+        .section h3 {
+            font-size: 1.5em;
+            color: #b81d24;
+            margin-bottom: 1em;
+        }
+
+        .section p {
+            margin-bottom: 1em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1em;
+        }
+
+        .grid div {
+            background-color: #f7f7f7;
+            padding: 1em;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .grid div h4 {
+            font-size: 1.2em;
+            color: #b81d24;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2em 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #b81d24;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+          .logo-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+           padding: 10px; /* Optional: adds some padding around logos */
+            width: 100%;
+          gap: 20px;
+           flex-direction: row;
+        }
+
+        .logo img{
+          height: 60px;
+          width: auto;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+/* Optional: Adjust the last image's margin */
+.logo img:last-child {
+    margin-right: 0; /* Removes right margin from the last image */
+}
+        .logo:hover {
+          transform: scale(1.1);
+          box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 500px) {
+          .logo-container {
+            flex-direction: row;
+            gap: 10px;
+          }
+
+          .logo {
+            height: 50px;
+          }
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+           <div class="logo-container">
+            <a href="{{ url_for('index') }}" class="logo">
+                <img src="{{ url_for('static', filename='log1.png') }}" alt="Logo 1">
+                <img src="{{ url_for('static', filename='odmoh.png') }}" alt="Logo 2">
+            </a>
+        </div>
+        <div>
+            <h1>STI Prevention Guide</h1>
+            <p>Your guide to understanding and preventing sexually transmitted infections (STIs)</p>
+            <a href="/" class="home-btn">Home</a>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#prevention">Prevention Methods</a></li>
+                <li><a href="#symptoms">Symptoms</a></li>
+                <li><a href="#risk-factors">Risk Factors</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="overview" class="container section">
+            <h2>Overview</h2>
+            <p> Sexually transmitted infections (STIs) are infections that are spread through sexual contact.
+                This means they can be passed from one person to another during vaginal, anal, or oral sex.
+                STIs are caused by different types of germs, including bacteria, viruses, or parasites.
+                Some of these infections can be easily treated with medicine, while others, like viruses, can stay in the body for life.
+                If STIs are not treated, they can lead to serious health problems.
+                For instance, some STIs can cause pain, discomfort, and other issues like infertility, which means difficulty having children.
+                Others, such as HIV (Human Immunodeficiency Virus), can weaken the immune system.</p>
+            <div class="collage-container">
+                <div class="collage-item" style="background-image: url('{{ url_for('static', filename='ye2.jpg') }}');"></div>
+                <div class="collage-item" style="background-image: url('{{ url_for('static', filename='ye3.jpeg') }}');"></div>
+                <div class="collage-item" style="background-image: url('{{ url_for('static', filename='hiv14.jpeg') }}');"></div>
+    </div>
+        </section>
+
+        <section id="prevention" class="container section">
+            <h2>Prevention Methods</h2>
+            <p>There are several ways to prevent STIs. It's important to practice safe sex, communicate with your partner, and take preventive measures. Here are some effective prevention methods:</p>
+            <div class="grid">
+                <div>
+                    <h4>Condom Use</h4>
+                    <p>Using condoms correctly every time you have sex significantly reduces the risk of getting or spreading most STIs.</p>
+                </div>
+                <div>
+                    <h4>Vaccination</h4>
+                    <p>Vaccines are available for certain STIs like HPV (Human Papillomavirus) and Hepatitis B. Getting vaccinated is an effective preventive measure.</p>
+                </div>
+                <div>
+                    <h4>Regular Testing</h4>
+                    <p>Getting regularly tested for STIs helps detect any infections early and allows for timely treatment and management.</p>
+                </div>
+                <div>
+                    <h4>Monogamy</h4>
+                    <p>Having sex with a mutually exclusive partner (monogamous relationship) reduces the chances of STI transmission.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="symptoms" class="container section">
+            <h2>Symptoms of STIs</h2>
+            <p>While some STIs may cause noticeable symptoms, others may not. It's important to be aware of common symptoms, including:</p>
+            <ul>
+                <li>Unusual discharge from the genitals</li>
+                <li>Pain or discomfort during urination</li>
+                <li>Itching, irritation, or sores around the genitals</li>
+                <li>Swollen lymph nodes</li>
+                <li>Pain during sex</li>
+            </ul>
+            <p>If you experience any of these symptoms, seek medical attention promptly for proper diagnosis and treatment.</p>
+        </section>
+
+        <section id="risk-factors" class="container section">
+            <h2>Risk Factors</h2>
+            <p>Certain behaviors and circumstances can increase the likelihood of getting an STI. These include:</p>
+            <ul>
+                <li>Multiple sexual partners</li>
+                <li>Unprotected sex</li>
+                <li>Drug use or alcohol use that impairs judgment</li>
+                <li>Having a history of STIs</li>
+            </ul>
+        </section>
+
+        <section id="resources" class="container section">
+            <h2>Additional Resources</h2>
+            <p>For more information and support, check out the following resources:</p>
+            <ul>
+                <li><a href="/pep-prep-faqs">STI Testing Information</a></li>
+                <li><a href="/testing-counseling">Contact Us for Counseling and Support</a></li>
+                <li><a href="/hiv-awareness-brochure">HIV Awareness Brochure</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+             <p>&copy; Ondo State AIDS, Viral Hepatitis and STI Control Program. All rights reserved.</p>
+            <p><a href="mailto:info@osaspc.ondostate.ng">Email Us</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

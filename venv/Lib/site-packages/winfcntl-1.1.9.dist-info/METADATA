@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: winfcntl
+Version: 1.1.9
+Summary: A fcntl solution for Windows Operating System
+Author: Kiamehr Eskandari
+Author-email: kiamehr13922014@gmail.com
+Keywords: fcntl,windows,module,package,library
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+
+A fcntl solution for Windows Operating System created to handle ModuleNotFoundError issues. This package replicates fcntl functionality for Windows, addressing compatibility issues where Unix-specific modules are required but not available.
+
+### How to Use
+
+This package can be used as a replacement for fcntl in Python modules that need cross-platform file control. Import `winfcntl` when running on Windows and `fcntl` on Unix-based systems.
+
+### Usage for Library Developers
+
+Library developers can check the operating system using `os.name` or `platform.system()` to decide whether to import `winfcntl` (for Windows) or `fcntl` (for Unix-based systems). The function names and interfaces are designed to be compatible with `fcntl`.
+
+### Changelog
+
+### Version 1.0.1
+- Fixed a small mistake disabling other programs from using the Fcntl class.
+
+### Version 1.0.0
+- Initial release.
+
+
+### Acknowledgments
+
+Thank you to Kiamehr Eskandari for developing this package.
