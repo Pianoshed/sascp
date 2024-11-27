@@ -259,7 +259,7 @@ def delete_submission(id):
         return jsonify({"success": False, "message": str(e)})
 
 
-EXCEL_FILE = "facility_geolocations.xlsx"
+EXCEL_FILE = "static/facility_geolocations.xlsx"
 @app.route('/api/facilities', methods=['GET'])
 def get_facilities():
     try:
