@@ -258,8 +258,7 @@ def delete_submission(id):
         db.session.rollback()
         return jsonify({"success": False, "message": str(e)})
 
-
- EXCEL_FILE = "static/facility_geolocations.xlsx"
+EXCEL_FILE = "static/facility_geolocations.xlsx"
 @app.route('/api/facilities', methods=['GET'])
 def get_facilities():
     try:
